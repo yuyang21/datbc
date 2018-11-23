@@ -1,0 +1,233 @@
+@import '/mixin';
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption, {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+    border: none;
+    font-weight: normal;
+    font-family: "微软雅黑",Helvetica,Tahoma,Arial,"Hiragino Sans GB","冬青黑体","Microsoft YaHei","WenQuanYi Micro Hei",SimSun,"宋体",Heiti,"黑体",sans-serif,PingFang SC;
+    box-sizing: border-box;
+    font-size: 14px;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-font-smoothing: antialiased;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    &:hover{
+        outline: none;
+    }
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: $fc;
+}
+
+ul, li, p {
+    list-style: none;
+	list-style-type: none;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  
+{  
+    width: 0px;  
+    height: 0px;  
+    background-color: $fc;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);  
+    border-radius: 10px;  
+    background-color: $f4;  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #555;  
+}  
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+textarea { -webkit-appearance: none;}   
+
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear{
+    clear: both;
+}
+
+.margin{
+    margin: 0 auto;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.overflow-hi {
+    overflow: hidden;
+}
+
+.position-re {
+    position: relative;
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cursor {
+    cursor: pointer;
+}
+.cursor-no {
+    cursor: no-drop !important;
+}
+
+.ft-b {
+    font-weight: bold;
+}
+
+.border-no {
+    border: none !important;
+}
+.title-style {
+    width: 154px;
+    margin: 80px 0 0 16.5%;
+    p {
+        display: block;
+        font-weight: bold;
+    }
+    .title-cn {
+        line-height: 1.06;
+        @include sc(25px, $blue);
+        border-bottom: 23.5px solid $red;
+        padding: 0 12px 8px 0;
+        text-align: left;
+    }
+    .title-en {
+        width: 100%;
+        line-height: 2.8;
+        @include sc(10px, $blue);
+        transform: scale(.82) translateX(-16px);
+    }
+}
+.ft-15 {
+    font-size: 15px !important;
+}
+
+#newsDetail {
+    .detail {
+        .title {
+            @include sc(18px,$blue);
+            font-weight: bold;
+            text-align: center;
+            padding: 60px 0 30px;
+        }
+        .content {
+            @include sc(14px,$blue);
+            text-align: justify;
+            line-height: 1.8;
+            text-indent: 25px;
+            margin-bottom: 15px;
+            a {
+                text-decoration: underline;
+                @include sc(12px,$blue);
+            }
+        }
+        img {
+            width: 100%;
+            margin: 0 0 15px;
+            background: $blue;
+        }
+    }
+}
+
+.news-list-comm {
+    ul {
+        li {
+          width: 100%;
+          overflow: hidden;
+          padding: 25px 16.5%;
+          box-sizing: border-box;
+          .left {
+            @include wh(127px,127px);
+            border-radius: 5px;
+            img {
+              width: 100%;
+            }
+          }
+          .right {
+            width: 83.7%;
+            position: relative;
+            .title {
+              line-height: 1.2;
+              @include sc(16px,$g3);
+              margin-top: 7px;
+              height: 36px;
+            }
+            .content {
+              line-height: 1.65;
+              text-align: justify;
+              @include sc(13px,$g6);
+              height: 58px;
+              margin-bottom: 10px;
+              overflow: hidden;
+            }
+            .time {
+              @include sc(14px,$g9);
+              img {
+                margin-right: 10px;
+                vertical-align: bottom;
+              }
+            }
+            .detail {
+              @include wh(51.5px,20px);
+              line-height: 20px;
+              text-align: center;
+              background: $blue;
+              border: 1px solid $blue;
+              border-radius: 5px;
+              position: absolute;
+              right: 0;
+              bottom: -1px;
+              cursor: pointer;
+              p {
+                @include sc(12px,$fc);
+              }
+            }
+          }
+        }
+        li:nth-child(even) {
+          background: $f4;
+        }
+    }
+}
